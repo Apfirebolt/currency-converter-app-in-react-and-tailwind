@@ -9,7 +9,6 @@ const Home = () => {
   const navigate = useNavigate();
   const getCurrencies = async () => {
     const currencies = await axiosInstance.get(`currencies.json`);
-    console.log(currencies);
     return currencies.data;
   };
 
@@ -25,7 +24,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <div className="w-3/4 mx-auto my-3 p-3 bg-blue-300">
+      <div className="w-3/4 mx-auto my-3 p-3">
         <h4 className="text-center text-4xl text-primary">CURRENCIES</h4>
         <div className="container mx-auto px-4 sm:px-8">
           <div className="py-8">

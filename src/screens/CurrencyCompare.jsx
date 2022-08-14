@@ -7,13 +7,9 @@ import LoaderComponent from "../components/Loader";
 import ErrorComponent from "../components/Error";
 
 const CurrencyCompare = () => {
-  const compareCurrencyAction = async () => {
-    console.log(currencyOne, currencyTwo);
-    let link = `currencies/${currencyOne}/${currencyTwo}.json`;
-
-    const data = await axiosInstance.get(link);
-    console.log("Compare data ", data);
-  };
+  const [currencyOne, setCurrencyOne] = useState("");
+  const [currencyTwo, setCurrencyTwo] = useState("");
+  const [compareDataString, setCompareDataString] = useState("");
 
   const { isLoading, error, data, isPreviousData } = useQuery(
     ["currencies"],
@@ -21,24 +17,24 @@ const CurrencyCompare = () => {
     { keepPreviousData: true }
   );
 
-  const [currencyOne, setCurrencyOne] = useState('');
-  const [currencyTwo, setCurrencyTwo] = useState('');
-  const [compareDataString, setCompareDataString] = useState("");
+  const compareCurrencyAction = async () => {
+    let link = `currencies/${currencyOne}/${currencyTwo}.json`;
+
+    const apiData = await axiosInstance.get(link);
+    const tempString = `${data[currencyOne]} is equal to ${apiData.data[currencyTwo]} units of ${data[currencyTwo]} on ${apiData.data.date}`;
+    setCompareDataString(tempString);
+  };
 
   const getCurrencies = async () => {
     const currencies = await axiosInstance.get(`currencies.json`);
-    console.log(currencies);
-    setCurrencyOne(Object.keys(currencies.data)[0])
-    setCurrencyTwo(Object.keys(currencies.data)[1])
-    console.log('Currency data ', currencies.data)
+    setCurrencyOne(Object.keys(currencies.data)[0]);
+    setCurrencyTwo(Object.keys(currencies.data)[1]);
     return currencies.data;
   };
 
-  console.log(currencyOne, currencyTwo)
-
   return (
     <Fragment>
-      <div className="w-3/4 mx-auto my-3 p-3 bg-blue-300">
+      <div className="w-3/4 mx-auto my-3 p-3">
         <h4 className="text-center text-4xl text-primary">
           COMPARE CURRENCIES
         </h4>
@@ -166,6 +162,9 @@ const CurrencyCompare = () => {
             </button>
           </div>
         </div>
+        <p className="my-3 text-xl font-bold text-center text-gray-500">
+            {compareDataString}
+          </p>
       </div>
     </Fragment>
   );
