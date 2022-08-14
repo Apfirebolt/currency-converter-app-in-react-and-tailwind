@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Currency Converter App in React using Headless UI and TailwindCSS
+
+A currency converter App which uses data from the API - https://github.com/fawazahmed0/currency-api. It is an open source 100% free API with no rate limits and daily updated currency data for over 150+ currencies in the world including cryptocurrencies.
+
+## Features
+
+* List of 150 + currencies
+* Convertion from one currency to another 
+* Compare a given currency against all other currencies
+
+## Technologies used
+
+* React - For UI development
+* Headless UI - For dynamic animated components using Tailwind CSS
+* Tailwind CSS - For CSS component styling
+* React-query - For cached API calls
 
 ## Available Scripts
 
