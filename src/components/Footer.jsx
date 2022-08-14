@@ -3,12 +3,16 @@ import React, { Fragment } from "react";
 const FooterComponent = () => {
   return (
     <Fragment>
-      <footer className="container">
-        <div className="columns">
-          <div className="column col-12 justify-center mt-3">
-            <p>Copyright @2022 Currency Converter</p>
-          </div>
-        </div>
+      <footer
+        className="bg-red-700
+             text-2xl text-white text-center
+             border-t-4
+             fixed
+             inset-x-0
+             bottom-0
+             p-4"
+      >
+        <p>Copyright @2022 Currency Converter</p>
       </footer>
     </Fragment>
   );
