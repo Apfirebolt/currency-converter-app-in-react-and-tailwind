@@ -39,32 +39,21 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Project Screenshots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Screenshots would be added as progress is made with this application. Screenshot of the homepage. It just contains a help text and link to the original API used to build this application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](./screenshots/home.png)
 
-### Code Splitting
+List of currencies. Pagination might be applied on the front-end as an improvement layer over the existing app in the future.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![alt text](./screenshots/list.png)
 
-### Analyzing the Bundle Size
+Compare currency page. This page would be used to compare 150+ currencies to each other.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![alt text](./screenshots/compare.png)
 
-### Making a Progressive Web App
+## Project Status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is a minor hobby project which I created once I came across this currency converter API on Github. A lot of these APIs are 
+paid and their free versions only have limited number of requests you can make on a daily and hourly basis.
