@@ -19,6 +19,10 @@ const Home = () => {
     { keepPreviousData: true }
   );
 
+  const compareCurrency = (symbol) => {
+    navigate(`/detail/${symbol}`);
+  }
+
   return (
     <Fragment>
       <div className="w-3/4 mx-auto my-3 p-3 bg-blue-300">
@@ -64,6 +68,7 @@ const Home = () => {
                               <button
                                 type="button"
                                 className="border border-yellow-500 bg-yellow-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-yellow-600 focus:outline-none focus:shadow-outline"
+                                onClick={() => compareCurrency(item)}
                               >
                                 Compare
                               </button>

@@ -1,16 +1,15 @@
 import React, { Fragment } from "react";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../plugins/interceptor";
 import LoaderComponent from "../components/Loader";
 import ErrorComponent from "../components/Error";
 
 const Home = () => {
-  const navigate = useNavigate();
+  const { name } = useParams();
   const getCompareCurrencies = async () => {
-    const currencies = await axiosInstance.get(`currencies/ada.json`);
-    console.log(currencies.data['ada']);
-    return currencies.data['ada'];
+    const currencies = await axiosInstance.get(`currencies/${name}.json`);
+    return currencies.data[name];
   };
 
   const { isLoading, error, data, isPreviousData } = useQuery(
@@ -36,9 +35,6 @@ const Home = () => {
                       <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
                         Relative Value
                       </th>
-                      <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                        Value
-                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -57,16 +53,6 @@ const Home = () => {
                               <p className="text-gray-900 whitespace-no-wrap text-center">
                                 {data[item]}
                               </p>
-                            </div>
-                          </td>
-                          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm w-2/5">
-                            <div className="ml-3 text-center">
-                              <button
-                                type="button"
-                                className="border border-yellow-500 bg-yellow-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-yellow-600 focus:outline-none focus:shadow-outline"
-                              >
-                                Compare
-                              </button>
                             </div>
                           </td>
                         </tr>

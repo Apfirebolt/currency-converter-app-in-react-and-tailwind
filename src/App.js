@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage/>} exact />
           <Route path="/compare" element={<CurrencyCompare/>} />
-          <Route path="/detail" element={<CurrencyDetail/>} />
+          <Route path="/detail/:name" element={<CurrencyDetail/>} />
           <Route path="/list" element={<CurrencyList/>} />
         </Routes>
       <Footer />
