@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { toast } from "react-toastify";
+
 
 const axiosInstance = axios.create();
 
@@ -17,6 +19,11 @@ axiosInstance.interceptors.request.use(function (config) {
 axiosInstance.interceptors.response.use(function (response) {
     return response;
   }, function (error) {
+    console.log('Something went wrong', error);
+    // if the error is 404, display toast message
+    if (error.response.status === 404) {
+      toast.error('404 error');
+    }
     return Promise.reject(error);
   });
 

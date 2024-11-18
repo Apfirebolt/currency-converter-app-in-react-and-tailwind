@@ -56,6 +56,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## Update
+
+This API no longer works, this project is now a playground for testing various React features.
+
 ## Project Screenshots
 
 Screenshots would be added as progress is made with this application. Screenshot of the homepage. It just contains a help text and link to the original API used to build this application.
